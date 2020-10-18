@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Audio Demo ThreeJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+    	html, body {
+ 			margin: 0;
+		  }
+    	canvas{
+    		width: 100vw;
+    		height: 100%;
+        position: absolute;
+    		display: none;
+        left: 0%;
+        top: 0%;
+    	}
+      input{
+        display: none;
+      }
+      .principal{
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        left: 0%;
+        top: 0%;
+      }
+      h1, h2, p, button {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <audio loop id="violetMusic" preload="auto" style="display: none" crossorigin="anonymous">
+      <source src="./violet.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div id="principal" class="Principal">
+      <div>
+        <h1>Positional audio demo</h1>
+        <h2>Controls</h2>
+        <ul>
+          <li>Move with WASD or Arrows</li>
+          <li>Click and drag to rotate the camera</li>
+          <li>Press F to hear the red ball (Forgotten love by AURORA)</li>
+          <li>Stand under the green ball to start it (Behind Closed Doors by Rise Against)</li>
+          <li>The purple ball is always playing (Everlong Acoustic version by Foo Fighters)</li>
+          <li>Press C to start hearing yourself from the blue ball (on key up the volume will be 0)</li>
+          <li>Movile controls soon</li>
+        </ul>
+      </div>
+      <div>
+        <p>By default the gain obtained or the volumen decrease by this formula</p> <br>
+        <p>inverse: An inverse distance model calculating the gain induced by the distance according to:</p> <br>
+        <p>refDistance / (refDistance + rolloffFactor * (Math.max(distance, refDistance) - refDistance))</p> <br>
+        <p>this is the inverse distance model, which is the one that ThreeJS use by default</p>
+      </div>
+      <button id="starter">Click here to play the demo</button>
+    </div>
+
+ 
+
+
+  	<canvas id="canvas"></canvas>
+    <script src="app.js"></script>
+  </body>
+</html>
